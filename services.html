@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Services - Computer Care</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+      /* Reset and Base Styles */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      :root {
+        /* Color System */
+        --color-white: #ffffff;
+        --color-gray-50: #f9fafb;
+        --color-gray-100: #f3f4f6;
+        --color-gray-200: #e5e7eb;
+        --color-gray-300: #d1d5db;
+        --color-gray-400: #9ca3af;
+        --color-gray-500: #6b7280;
+        --color-gray-600: #4b5563;
+        --color-gray-700: #374151;
+        --color-gray-800: #1f2937;
+        --color-gray-900: #111827;
+
+        /* Brand Colors (Matched with index page) */
+        --color-primary: #3b82f6;
+        --color-primary-light: #60a5fa;
+        --color-primary-dark: #2563eb;
+        --color-secondary: #a182ff;
+        --color-secondary-light: #c0b0ff;
+        --color-secondary-dark: #8a6dff;
+        --color-accent: #05a2a2;
+
+        /* Typography */
+        --font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+        --font-size-xs: 0.75rem;
+        --font-size-sm: 0.875rem;
+        --font-size-base: 1rem;
+        --font-size-lg: 1.125rem;
+        --font-size-xl: 1.25rem;
+        --font-size-2xl: 1.5rem;
+        --font-size-3xl: 1.875rem;
+        --font-size-4xl: 2.25rem;
+        --font-size-5xl: 3rem;
+        --font-size-6xl: 3.75rem;
+
+        /* Spacing */
+        --spacing-1: 0.25rem;
+        --spacing-2: 0.5rem;
+        --spacing-3: 0.75rem;
+        --spacing-4: 1rem;
+        --spacing-5: 1.25rem;
+        --spacing-6: 1.5rem;
+        --spacing-8: 2rem;
+        --spacing-10: 2.5rem;
+        --spacing-12: 3rem;
+        --spacing-16: 4rem;
+        --spacing-20: 5rem;
+        --spacing-24: 6rem;
+        --spacing-32: 8rem;
+
+        /* Border Radius */
+        --radius-sm: 0.25rem;
+        --radius-md: 0.375rem;
+        --radius-lg: 0.5rem;
+        --radius-xl: 0.75rem;
+        --radius-2xl: 1rem;
+
+        /* Shadows */
+        --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+        --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+        --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+        --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+      }
+
+      body {
+        font-family: var(--font-family);
+        line-height: 1.6;
+        color: var(--color-gray-600);
+        background-color: var(--color-white);
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+      }
+
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 var(--spacing-4);
+      }
+
+      h1, h2, h3, h4, h5, h6 {
+        color: var(--color-gray-900);
+        font-weight: 700;
+        line-height: 1.2;
+      }
+
+      .text-balance { text-wrap: balance; }
+
+      /* Header */
+      .header {
+        position: sticky;
+        top: 0;
+        z-index: 50;
+        background-color: rgba(255, 255, 255, 0.95);
+        backdrop-filter: blur(10px);
+        border-bottom: 1px solid var(--color-gray-200);
+      }
+
+      .header-content {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        height: 4rem;
+      }
+
+      .logo {
+        display: flex;
+        align-items: center;
+        gap: var(--spacing-2);
+        text-decoration: none;
+      }
+
+      .logo-icon {
+        width: 2rem;
+        height: 2rem;
+        background-color: var(--color-primary);
+        border-radius: var(--radius-lg);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--color-white);
+      }
+
+      .logo-text {
+        font-size: var(--font-size-xl);
+        font-weight: 700;
+        color: var(--color-gray-900);
+      }
+
+      .nav {
+        display: none;
+        align-items: center;
+        gap: var(--spacing-8);
+      }
+
+      @media (min-width: 768px) { .nav { display: flex; } }
+
+      .nav-link {
+        font-size: var(--font-size-sm);
+        font-weight: 500;
+        color: var(--color-gray-600);
+        text-decoration: none;
+        transition: color 0.2s ease;
+      }
+
+      .nav-link:hover, .nav-link.active { color: var(--color-primary); }
+      
+      /* Hero Section */
+      .hero {
+        padding: var(--spacing-20) 0;
+      }
+
+      .hero-content {
+        text-align: center;
+        max-width: 64rem;
+        margin: 0 auto;
+      }
+
+      .badge {
+        display: inline-block;
+        padding: var(--spacing-2) var(--spacing-4);
+        background-color: var(--color-gray-100);
+        color: var(--color-gray-600);
+        font-size: var(--font-size-sm);
+        font-weight: 500;
+        border-radius: var(--radius-2xl);
+        margin-bottom: var(--spacing-6);
+      }
+
+      .hero-title {
+        font-size: var(--font-size-4xl);
+        margin-bottom: var(--spacing-6);
+      }
+      @media (min-width: 1024px) { .hero-title { font-size: var(--font-size-5xl); } }
+
+
+      .hero-description {
+        font-size: var(--font-size-lg);
+        color: var(--color-gray-500);
+        margin-bottom: var(--spacing-8);
+        max-width: 42rem;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      /* Services Detailed Page */
+      .services-detailed {
+        padding: var(--spacing-20) 0;
+        background-color: var(--color-gray-50);
+      }
+
+      .services-detailed-grid {
+        display: grid;
+        gap: var(--spacing-12);
+      }
+
+      @media (min-width: 1024px) {
+        .services-detailed-grid {
+          grid-template-columns: repeat(3, 1fr);
+          gap: var(--spacing-8);
+        }
+      }
+      
+      .service-detailed {
+        display: grid; 
+        grid-template-rows: auto 1fr;
+        gap: var(--spacing-8);
+      }
+
+      .service-detailed-header {
+        text-align: center;
+      }
+
+      .service-icon-large {
+        width: 5rem;
+        height: 5rem;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto var(--spacing-6);
+      }
+
+      .service-icon-large.primary { background-color: rgba(59, 130, 246, 0.1); color: var(--color-primary); }
+      .service-icon-large.secondary { background-color: rgba(161, 130, 255, 0.1); color: var(--color-secondary); }
+      .service-icon-large.accent { background-color: rgba(5, 162, 162, 0.1); color: var(--color-accent); }
+      .service-icon-large i { font-size: 2.5rem; }
+
+      .service-detailed-title {
+        font-size: var(--font-size-2xl);
+        margin-bottom: var(--spacing-4);
+      }
+
+      .service-detailed-description {
+        color: var(--color-gray-500);
+        font-size: var(--font-size-lg);
+      }
+
+      .service-detailed-features {
+        display: grid;
+        grid-template-rows: repeat(3, 1fr);
+        gap: var(--spacing-4);
+      }
+
+      .feature-card {
+        background-color: var(--color-white);
+        border-radius: var(--radius-xl);
+        padding: var(--spacing-6);
+        box-shadow: var(--shadow-sm);
+        display: flex;
+        flex-direction: column;
+        gap: var(--spacing-4);
+        text-align: center;
+      }
+      @media (min-width: 640px) {
+        .feature-card {
+          flex-direction: row;
+          text-align: left;
+        }
+      }
+
+
+      .feature-icon {
+        width: 3rem;
+        height: 3rem;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+        margin: 0 auto;
+      }
+      @media (min-width: 640px) {
+        .feature-icon {
+          margin: 0;
+          margin-top: var(--spacing-1);
+        }
+      }
+
+      .feature-icon.primary { background-color: rgba(59, 130, 246, 0.1); color: var(--color-primary); }
+      .feature-icon.secondary { background-color: rgba(161, 130, 255, 0.1); color: var(--color-secondary); }
+      .feature-icon.accent { background-color: rgba(5, 162, 162, 0.1); color: var(--color-accent); }
+      .feature-icon i { font-size: 1.5rem; }
+
+      .feature-title {
+        font-weight: 600;
+        margin-bottom: var(--spacing-2);
+        font-size: var(--font-size-base);
+      }
+
+      .feature-description {
+        font-size: var(--font-size-sm);
+        color: var(--color-gray-500);
+      }
+      
+      /* Footer */
+      .footer {
+        border-top: 1px solid var(--color-gray-200);
+        background-color: var(--color-white);
+        padding: var(--spacing-12) 0;
+      }
+
+      .footer-content {
+        display: grid;
+        gap: var(--spacing-8);
+      }
+
+      @media (min-width: 768px) { .footer-content { grid-template-columns: 2fr 1fr 1fr; } }
+
+      .footer-brand .logo { margin-bottom: var(--spacing-4); }
+      .footer-description { color: var(--color-gray-500); max-width: 24rem; }
+      .footer-links { display: grid; gap: var(--spacing-8); grid-template-columns: repeat(2, 1fr); }
+      .footer-title { font-weight: 600; margin-bottom: var(--spacing-4); color: var(--color-gray-900); }
+      .footer-list { list-style: none; }
+      .footer-list li { margin-bottom: var(--spacing-2); }
+      .footer-link { color: var(--color-gray-500); text-decoration: none; font-size: var(--font-size-sm); transition: color 0.2s ease; }
+      .footer-link:hover { color: var(--color-primary); }
+      .footer-bottom { border-top: 1px solid var(--color-gray-200); margin-top: var(--spacing-8); padding-top: var(--spacing-8); text-align: center; }
+      .footer-bottom p { font-size: var(--font-size-sm); color: var(--color-gray-500); }
+    </style>
+</head>
+<body>
+
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <a href="index.html" class="logo">
+                    <div class="logo-icon">
+                        <i class="fas fa-bolt"></i>
+                    </div>
+                    <span class="logo-text">Computer Care</span>
+                </a>
+                <nav class="nav">
+                    <a href="index.html" class="nav-link">Home</a>
+                    <a href="services.html" class="nav-link active">Services</a>
+                    <a href="index.html#how-it-works" class="nav-link">How It Works</a>
+                    <a href="index.html#contact" class="nav-link">Contact</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="hero-content">
+                <div class="badge">Our Services</div>
+                <h1 class="hero-title text-balance">Comprehensive IT Solutions for Your Business</h1>
+                <p class="hero-description text-balance">
+                    We provide a wide array of expert IT services to boost your productivity, secure your operations, and modernize your workplace.
+                </p>
+            </div>
+        </section>
+
+        <section class="services-detailed">
+          <div class="container">
+            <div class="services-detailed-grid">
+        
+              <!-- Productivity -->
+              <div class="service-detailed">
+                <div class="service-detailed-header">
+                  <div class="service-icon-large primary">
+                    <i class="fas fa-bolt"></i>
+                  </div>
+                  <h2 class="service-detailed-title">Boost Office Productivity</h2>
+                  <p class="service-detailed-description">Comprehensive hardware and software solutions designed to maximize your team's efficiency and collaboration.</p>
+                </div>
+                <div class="service-detailed-features">
+                  <div class="feature-card">
+                    <div class="feature-icon primary"><i class="fas fa-desktop"></i></div>
+                    <div>
+                      <h4 class="feature-title">Desktop & Laptop Setup</h4>
+                      <p class="feature-description">Professional workstation configuration, software installation, and performance optimization.</p>
+                    </div>
+                  </div>
+                  <div class="feature-card">
+                    <div class="feature-icon primary"><i class="fas fa-wifi"></i></div>
+                    <div>
+                      <h4 class="feature-title">Network Infrastructure</h4>
+                      <p class="feature-description">Reliable networking solutions including Wi-Fi setup, ethernet installation, and bandwidth optimization.</p>
+                    </div>
+                  </div>
+                  <div class="feature-card">
+                    <div class="feature-icon primary"><i class="fas fa-rocket"></i></div>
+                    <div>
+                      <h4 class="feature-title">Software Optimization</h4>
+                      <p class="feature-description">System tuning, software updates, and productivity tool integration for peak performance.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+        
+              <!-- Security -->
+              <div class="service-detailed">
+                <div class="service-detailed-header">
+                  <div class="service-icon-large secondary">
+                    <i class="fas fa-shield-alt"></i>
+                  </div>
+                  <h2 class="service-detailed-title">Secure Your Operations</h2>
+                  <p class="service-detailed-description">Advanced security measures and data protection solutions to safeguard your valuable business assets.</p>
+                </div>
+                <div class="service-detailed-features">
+                  <div class="feature-card">
+                    <div class="feature-icon secondary"><i class="fas fa-database"></i></div>
+                    <div>
+                      <h4 class="feature-title">Data Backup & Recovery</h4>
+                      <p class="feature-description">Automated backup systems and disaster recovery planning to protect against data loss.</p>
+                    </div>
+                  </div>
+                  <div class="feature-card">
+                    <div class="feature-icon secondary"><i class="fas fa-lock"></i></div>
+                    <div>
+                      <h4 class="feature-title">Cybersecurity Implementation</h4>
+                      <p class="feature-description">Firewall setup, antivirus deployment, and security monitoring to prevent cyber threats.</p>
+                    </div>
+                  </div>
+                  <div class="feature-card">
+                    <div class="feature-icon secondary"><i class="fas fa-server"></i></div>
+                    <div>
+                      <h4 class="feature-title">Server Management</h4>
+                      <p class="feature-description">Professional server setup, maintenance, and monitoring for reliable business operations.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+        
+              <!-- Meetings -->
+              <div class="service-detailed">
+                <div class="service-detailed-header">
+                  <div class="service-icon-large accent">
+                    <i class="fas fa-users"></i>
+                  </div>
+                  <h2 class="service-detailed-title">Modernize Meeting Spaces</h2>
+                  <p class="service-detailed-description">State-of-the-art conference room technology for seamless collaboration and professional presentations.</p>
+                </div>
+                <div class="service-detailed-features">
+                  <div class="feature-card">
+                    <div class="feature-icon accent"><i class="fas fa-video"></i></div>
+                    <div>
+                      <h4 class="feature-title">Video Conferencing Systems</h4>
+                      <p class="feature-description">High-quality cameras, microphones, and software for crystal-clear remote meetings.</p>
+                    </div>
+                  </div>
+                  <div class="feature-card">
+                    <div class="feature-icon accent"><i class="fas fa-chalkboard-teacher"></i></div>
+                    <div>
+                      <h4 class="feature-title">Interactive Displays</h4>
+                      <p class="feature-description">Smart boards and large displays for engaging presentations and collaborative work sessions.</p>
+                    </div>
+                  </div>
+                  <div class="feature-card">
+                    <div class="feature-icon accent"><i class="fas fa-volume-up"></i></div>
+                    <div>
+                      <h4 class="feature-title">Audio-Visual Integration</h4>
+                      <p class="feature-description">Professional sound systems and lighting solutions for impactful presentations.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+        
+            </div>
+          </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <a href="index.html" class="logo">
+                        <div class="logo-icon">
+                            <i class="fas fa-bolt"></i>
+                        </div>
+                        <span class="logo-text">Computer Care</span>
+                    </a>
+                    <p class="footer-description">
+                        Your trusted partner for comprehensive IT solutions. We help businesses modernize their technology
+                        infrastructure for improved productivity and security.
+                    </p>
+                </div>
+                <div class="footer-links">
+                    <div>
+                        <h4 class="footer-title">Services</h4>
+                        <ul class="footer-list">
+                            <li><a href="#" class="footer-link">Office Productivity</a></li>
+                            <li><a href="#" class="footer-link">Security Solutions</a></li>
+                            <li><a href="#" class="footer-link">Meeting Spaces</a></li>
+                            <li><a href="#" class="footer-link">IT Support</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 class="footer-title">Company</h4>
+                        <ul class="footer-list">
+                            <li><a href="index.html#about" class="footer-link">About Us</a></li>
+                            <li><a href="index.html#projects" class="footer-link">Projects</a></li>
+                            <li><a href="index.html#contact" class="footer-link">Contact</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Computer Care. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
