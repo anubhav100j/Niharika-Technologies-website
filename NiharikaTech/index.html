@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Computer Care - Hardware & Software Solutions</title>
+    <title>NiharikaTech - Hardware & Software Solutions</title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
@@ -16,14 +16,14 @@
                     <div class="logo-icon">
                         <i class="fas fa-bolt"></i>
                     </div>
-                    <span class="logo-text">Computer Care</span>
+                    <span class="logo-text">NiharikaTech</span>
                 </a>
                 <nav class="nav">
                     <a href="index.html" class="nav-link active">Home</a>
                     <a href="services.html" class="nav-link">Services</a>
                     <a href="partners.html" class="nav-link">Partners</a>
-                    <a href="index.html#how-it-works" class="nav-link">How It Works</a>
-                    <a href="index.html#contact" class="nav-link">Contact</a>
+                    <a href="#how-it-works" class="nav-link">How It Works</a>
+                    <a href="#contact" class="nav-link">Contact</a>
                 </nav>
             </div>
         </div>
@@ -31,273 +31,125 @@
 
     <main>
         <section id="home" class="hero">
-            <div class="geometric-bg">
-                <div class="shape"></div>
-                <div class="shape"></div>
-                <div class="shape"></div>
-                <div class="shape"></div>
-            </div>
-            <div class="particles"></div>
-
             <div class="hero-content">
-                <h1>Innovative Hardware & Software Solutions</h1>
-                <p>Transform your workplace with cutting-edge technology solutions. We provide comprehensive IT services to boost productivity, enhance security, and modernize your operations.</p>
-                <div class="hero-buttons">
-                    <a href="services.html" class="btn primary-btn">Explore Services <i class="fas fa-arrow-right ml-3"></i></a>
+                <h1 class="hero-title">Innovative Hardware & Software Solutions</h1>
+                <p class="hero-subtitle">Transform your workplace with cutting-edge technology solutions. We provide comprehensive IT services to boost productivity, enhance security, and modernize your operations.</p>
+                <div class="cta-buttons">
+                    <a href="services.html" class="btn primary-btn">Explore Services</a>
                     <a href="#contact" class="btn secondary-btn">Get in Touch</a>
                 </div>
             </div>
         </section>
 
-        <section id="services" class="py-20 bg-muted/30">
-            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="text-center mb-16">
-                    <h2 class="text-3xl lg:text-4xl font-bold text-balance mb-4">Comprehensive IT Solutions</h2>
-                    <p class="text-lg text-muted-foreground text-balance max-w-2xl mx-auto">
+        <section id="services" class="py-20 bg-muted-30">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Comprehensive IT Solutions</h2>
+                    <p class="section-subtitle">
                         From productivity enhancement to security implementation, we deliver tailored technology solutions that
                         drive your business forward.
                     </p>
                 </div>
 
-                <div class="grid md:grid-cols-3 gap-8">
-                    <div class="solution-card">
-                        <div class="solution-card-header">
-                            <div class="solution-icon-wrapper">
-                                <i class="fas fa-bolt solution-icon"></i>
-                            </div>
-                            <h3 class="solution-card-title">Boost Office Productivity</h3>
-                            <p class="solution-card-description">
-                                Desktops, laptops, and networking solutions to keep your team efficient and connected.
-                            </p>
-                        </div>
-                        <div class="solution-card-content">
-                            <ul class="solution-features">
-                                <li><i class="fas fa-check-circle feature-icon"></i> Hardware setup & maintenance</li>
-                                <li><i class="fas fa-check-circle feature-icon"></i> Network infrastructure</li>
-                                <li><i class="fas fa-check-circle feature-icon"></i> Software optimization</li>
-                            </ul>
-                        </div>
+                <div class="categories-grid">
+                    <div class="card category-card">
+                        <div class="category-icon"><i class="fas fa-laptop-code fa-2x"></i></div>
+                        <h3>Boost Office Productivity</h3>
+                        <p>Desktops, laptops, and networking solutions to keep your team efficient and connected.</p>
                     </div>
 
-                    <div class="solution-card">
-                        <div class="solution-card-header">
-                            <div class="solution-icon-wrapper">
-                                <i class="fas fa-shield-alt solution-icon"></i>
-                            </div>
-                            <h3 class="solution-card-title">Secure Your Operations</h3>
-                            <p class="solution-card-description">
-                                Servers, data storage, and security solutions to protect your valuable business assets.
-                            </p>
-                        </div>
-                        <div class="solution-card-content">
-                            <ul class="solution-features">
-                                <li><i class="fas fa-check-circle feature-icon"></i> Data backup & recovery</li>
-                                <li><i class="fas fa-check-circle feature-icon"></i> Cybersecurity implementation</li>
-                                <li><i class="fas fa-check-circle feature-icon"></i> Server management</li>
-                            </ul>
-                        </div>
+                    <div class="card category-card">
+                        <div class="category-icon"><i class="fas fa-shield-alt fa-2x"></i></div>
+                        <h3>Secure Your Operations</h3>
+                        <p>Servers, data storage, and security solutions to protect your valuable business assets.</p>
                     </div>
 
-                    <div class="solution-card">
-                        <div class="solution-card-header">
-                            <div class="solution-icon-wrapper">
-                                <i class="fas fa-users solution-icon"></i>
-                            </div>
-                            <h3 class="solution-card-title">Modernize Meeting Spaces</h3>
-                            <p class="solution-card-description">
-                                State-of-the-art conference room technology for seamless collaboration and communication.
-                            </p>
-                        </div>
-                        <div class="solution-card-content">
-                            <ul class="solution-features">
-                                <li><i class="fas fa-check-circle feature-icon"></i> Video conferencing systems</li>
-                                <li><i class="fas fa-check-circle feature-icon"></i> Interactive displays</li>
-                                <li><i class="fas fa-check-circle feature-icon"></i> Audio-visual integration</li>
-                            </ul>
-                        </div>
+                    <div class="card category-card">
+                        <div class="category-icon"><i class="fas fa-users fa-2x"></i></div>
+                        <h3>Modernize Meeting Spaces</h3>
+                        <p>State-of-the-art conference room technology for seamless collaboration.</p>
                     </div>
                 </div>
-                <div style="text-align: center; margin-top: 40px;">
-                    <a href="services.html" class="btn primary-btn">Explore in depth <i class="fas fa-arrow-right ml-2 h-5 w-5"></i></a>
+                <div class="text-center" style="margin-top: 4rem;">
+                    <a href="services.html" class="btn primary-btn">Explore All Services</a>
                 </div>
             </div>
         </section>
 
         <section id="how-it-works" class="py-20">
-            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="text-center mb-16">
-                    <h2 class="text-3xl lg:text-4xl font-bold text-balance mb-4">How It Works</h2>
-                    <p class="text-lg text-muted-foreground text-balance max-w-2xl mx-auto">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">How It Works</h2>
+                    <p class="section-subtitle">
                         Our streamlined process ensures efficient delivery of IT solutions tailored to your business needs.
                     </p>
                 </div>
 
-                <div class="grid md:grid-cols-3 gap-8 max-w-4xl mx-auto">
+                <div class="categories-grid">
                     <div class="text-center">
-                        <div class="mx-auto mb-6 h-20 w-20 rounded-full bg-primary text-primary-foreground flex items-center justify-center text-2xl font-bold">
+                        <div class="mx-auto mb-6 h-20 w-20 rounded-full bg-primary text-white flex items-center justify-center text-2xl font-bold" style="height: 5rem; width: 5rem; border-radius: 50%; display: flex; align-items: center; justify-content: center; background-color: var(--color-primary); color: white; font-size: 1.5rem; margin-bottom: 1.5rem;">
                             1
                         </div>
-                        <h3 class="text-xl font-semibold mb-3">Consultation & Assessment</h3>
+                        <h3 class="text-xl font-semibold mb-3">Consultation</h3>
                         <p class="text-muted-foreground">
-                            We analyze your current setup and understand your business requirements to create a customized solution
-                            plan.
+                            We analyze your current setup and understand your business requirements.
                         </p>
                     </div>
 
                     <div class="text-center">
-                        <div class="mx-auto mb-6 h-20 w-20 rounded-full bg-secondary text-secondary-foreground flex items-center justify-center text-2xl font-bold">
+                        <div class="mx-auto mb-6 h-20 w-20 rounded-full bg-secondary text-white flex items-center justify-center text-2xl font-bold" style="height: 5rem; width: 5rem; border-radius: 50%; display: flex; align-items: center; justify-content: center; background-color: var(--color-secondary); color: white; font-size: 1.5rem; margin-bottom: 1.5rem;">
                             2
                         </div>
-                        <h3 class="text-xl font-semibold mb-3">Implementation & Setup</h3>
+                        <h3 class="text-xl font-semibold mb-3">Implementation</h3>
                         <p class="text-muted-foreground">
-                            Our expert team implements the solution with minimal disruption to your daily operations and workflow.
+                            Our expert team implements the solution with minimal disruption to your daily operations.
                         </p>
                     </div>
 
                     <div class="text-center">
-                        <div class="mx-auto mb-6 h-20 w-20 rounded-full bg-accent text-accent-foreground flex items-center justify-center text-2xl font-bold">
+                        <div class="mx-auto mb-6 h-20 w-20 rounded-full bg-accent text-white flex items-center justify-center text-2xl font-bold" style="height: 5rem; width: 5rem; border-radius: 50%; display: flex; align-items: center; justify-content: center; background-color: var(--color-accent); color: white; font-size: 1.5rem; margin-bottom: 1.5rem;">
                             3
                         </div>
                         <h3 class="text-xl font-semibold mb-3">Ongoing Support</h3>
                         <p class="text-muted-foreground">
-                            We provide continuous monitoring, maintenance, and support to ensure optimal performance and
-                            reliability.
+                            We provide continuous monitoring, maintenance, and support to ensure optimal performance.
                         </p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section id="about" class="about-section">
+        <section id="about" class="partnership-benefits" style="padding-bottom: 5rem;">
             <div class="container">
-                <h2 class="section-title">About Computer Care</h2>
-                <div class="about-content">
-                    <div class="about-text">
-                        <p>Computer Care is a leading MSME company providing comprehensive hardware and software solutions to both government and private sectors. With our expertise in GeM (Government e-Marketplace), we help organizations streamline their procurement processes and achieve operational excellence.</p>
+                <div class="benefits-content">
+                    <div class="benefits-text">
+                        <h2 class="section-title" style="text-align: left; margin-bottom: var(--spacing-4);">About NiharikaTech</h2>
+                        <p>NiharikaTech is a leading MSME company providing comprehensive hardware and software solutions to both government and private sectors. With our expertise in GeM (Government e-Marketplace), we help organizations streamline their procurement processes and achieve operational excellence.</p>
                         <p>Our team of experts is dedicated to delivering high-quality, innovative solutions tailored to meet the unique requirements of our clients.</p>
-                        <div class="company-stats">
-                            <div class="stat-item">
-                                <span class="stat-number">10+</span>
-                                <span class="stat-text">Years Experience</span>
-                            </div>
-                            <div class="stat-item">
-                                <span class="stat-number">100+</span>
-                                <span class="stat-text">Projects Completed</span>
-                            </div>
-                            <div class="stat-item">
-                                <span class="stat-number">50+</span>
-                                <span class="stat-text">Happy Clients</span>
-                            </div>
-                        </div>
                     </div>
-                    <div class="about-image">
-                        <img src="https://via.placeholder.com/500x300" alt="Computer Care Office">
+                    <div class="benefits-image">
+                        <img src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?q=80&w=1932&auto=format&fit=crop" alt="NiharikaTech Team">
                     </div>
                 </div>
             </div>
         </section>
 
-        
-
-        <section id="projects" class="projects-section">
+        <section id="contact" class="py-20 bg-muted-30">
             <div class="container">
-                <h2 class="section-title">Our Projects</h2>
-                <div class="projects-filter">
-                    <button class="filter-btn active" data-filter="all">All</button>
-                    <button class="filter-btn" data-filter="government">Government</button>
-                    <button class="filter-btn" data-filter="private">Private Sector</button>
-                </div>
-                <div class="projects-grid">
-                    <div class="project-card" data-category="government">
-                        <img src="https://via.placeholder.com/300x200" alt="Government Project">
-                        <div class="project-info">
-                            <h3>E-Governance Portal</h3>
-                            <p>Developed a comprehensive e-governance portal for a state government department.</p>
-                        </div>
-                    </div>
-                    <div class="project-card" data-category="private">
-                        <img src="https://via.placeholder.com/300x200" alt="Private Sector Project">
-                        <div class="project-info">
-                            <h3>Enterprise Resource Planning</h3>
-                            <p>Implemented a custom ERP solution for a manufacturing company.</p>
-                        </div>
-                    </div>
-                    <div class="project-card" data-category="government">
-                        <img src="https://via.placeholder.com/300x200" alt="Government Project">
-                        <div class="project-info">
-                            <h3>Smart City Infrastructure</h3>
-                            <p>Provided hardware infrastructure for a smart city initiative.</p>
-                        </div>
-                    </div>
-                    <div class="project-card" data-category="private">
-                        <img src="https://via.placeholder.com/300x200" alt="Private Sector Project">
-                        <div class="project-info">
-                            <h3>Healthcare Management System</h3>
-                            <p>Developed a comprehensive healthcare management system for a private hospital chain.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="certifications" class="certifications-section">
-            <div class="container">
-                <h2 class="section-title">Certifications & Recognitions</h2>
-                <div class="certification-logos">
-                    <img src="Images/ISO-removebg-preview.png" alt="ISO Certified">
-                    <img src="Images/MSME-removebg-preview.png" alt="MSME Certified">
-                    <img src="Images/GeM-removebg-preview.png" alt="GeM Government Recognized">
-                </div>
-            </div>
-        </section>
-
-        <section id="contact" class="py-20 bg-muted/30">
-            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-              <div class="text-center mb-16">
-                <h2 class="text-3xl lg:text-4xl font-bold text-balance mb-4">Ready to Transform Your Business?</h2>
-                <p class="text-lg text-muted-foreground text-balance max-w-2xl mx-auto">
+              <div class="section-header">
+                <h2 class="section-title">Ready to Transform Your Business?</h2>
+                <p class="section-subtitle">
                   Get in touch with our IT experts to discuss how we can help modernize your technology infrastructure.
                 </p>
               </div>
     
-              <div class="grid md:grid-cols-3 gap-8 max-w-4xl mx-auto">
-                <div class="card text-center border-0 shadow-sm">
-                  <div class="card-content pt-6">
-                    <i class="fas fa-phone h-8 w-8 text-primary mx-auto mb-4"></i>
-                    <h3 class="font-semibold mb-2">Call Us</h3>
-                    <p class="text-muted-foreground">+1 (555) 123-4567</p>
-                  </div>
-                </div>
-    
-                <div class="card text-center border-0 shadow-sm">
-                  <div class="card-content pt-6">
-                    <i class="fas fa-envelope h-8 w-8 text-secondary mx-auto mb-4"></i>
-                    <h3 class="font-semibold mb-2">Email Us</h3>
-                    <p class="text-muted-foreground">info@computercare.com</p>
-                  </div>
-                </div>
-    
-                <div class="card text-center border-0 shadow-sm">
-                  <div class="card-content pt-6">
-                    <i class="fas fa-map-pin h-8 w-8 text-accent mx-auto mb-4"></i>
-                    <h3 class="font-semibold mb-2">Visit Us</h3>
-                    <p class="text-muted-foreground">
-                      123 Tech Street
-                      <br />
-                      Business District
-                    </p>
-                  </div>
-                </div>
-              </div>
-    
-              <div class="text-center mt-12">
-                <a href="#" class="btn primary-btn btn-lg px-8">
+              <div class="text-center">
+                <a href="#" class="btn primary-btn">
                   Schedule Free Consultation
-                  <i class="fas fa-arrow-right ml-2 h-5 w-5"></i>
                 </a>
               </div>
             </div>
-          </section>
+        </section>
     </main>
 
     <footer class="footer">
@@ -308,7 +160,7 @@
                         <div class="logo-icon">
                             <i class="fas fa-bolt"></i>
                         </div>
-                        <span class="logo-text">Computer Care</span>
+                        <span class="logo-text">NiharikaTech</span>
                     </a>
                     <p class="footer-description">
                         Your trusted partner for comprehensive IT solutions. We help businesses modernize their technology
@@ -319,29 +171,28 @@
                     <div>
                         <h4 class="footer-title">Services</h4>
                         <ul class="footer-list">
-                            <li><a href="#" class="footer-link">Office Productivity</a></li>
-                            <li><a href="#" class="footer-link">Security Solutions</a></li>
-                            <li><a href="#" class="footer-link">Meeting Spaces</a></li>
-                            <li><a href="#" class="footer-link">IT Support</a></li>
+                            <li><a href="services.html" class="footer-link">Office Productivity</a></li>
+                            <li><a href="services.html" class="footer-link">Security Solutions</a></li>
+                            <li><a href="services.html" class="footer-link">Meeting Spaces</a></li>
+                            <li><a href="services.html" class="footer-link">IT Support</a></li>
                         </ul>
                     </div>
                     <div>
                         <h4 class="footer-title">Company</h4>
                         <ul class="footer-list">
-                            <li><a href="index.html#about" class="footer-link">About Us</a></li>
-                            <li><a href="index.html#projects" class="footer-link">Projects</a></li>
-                            <li><a href="index.html#contact" class="footer-link">Contact</a></li>
+                            <li><a href="#about" class="footer-link">About Us</a></li>
+                            <li><a href="partners.html" class="footer-link">Partners</a></li>
+                            <li><a href="#contact" class="footer-link">Contact</a></li>
                         </ul>
                     </div>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2024 Computer Care. All rights reserved.</p>
+                <p>&copy; 2024 NiharikaTech. All rights reserved.</p>
             </div>
         </div>
     </footer>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
     <script src="js/script.js"></script>
     <script src="js/animations.js"></script>
 </body>
