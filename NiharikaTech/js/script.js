@@ -19,25 +19,6 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // JavaScript for creating floating particles
-    /*
-    function createParticles() {
-        const particlesContainer = document.querySelector('.particles');
-        const particleCount = 50;
-        
-        for (let i = 0; i < particleCount; i++) {
-            const particle = document.createElement('div');
-            particle.className = 'particle';
-            particle.style.left = Math.random() * 100 + '%';
-            particle.style.animationDelay = Math.random() * 10 + 's';
-            particle.style.animationDuration = (Math.random() * 10 + 10) + 's';
-            particlesContainer.appendChild(particle);
-        }
-    }
-    */
-
-    // Initialize particles when page loads
-    window.addEventListener('load', createParticles);
     
     // Smooth scrolling for anchor links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
