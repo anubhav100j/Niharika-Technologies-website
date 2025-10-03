@@ -1,42 +1,85 @@
 document.addEventListener('DOMContentLoaded', function() {
+    const hero = document.querySelector('.hero');
+    if (!hero) return;
 
-    // Animate shapes
-    anime({
-        targets: '.shape',
-        translateX: () => anime.random(-100, 100) + 'vw',
-        translateY: () => anime.random(-100, 100) + 'vh',
-        rotate: () => anime.random(0, 360),
-        scale: () => anime.random(0.1, 1),
-        opacity: () => anime.random(0.1, 0.5),
-        duration: () => anime.random(1000, 3000),
-        easing: 'easeInOutSine',
-        direction: 'alternate',
-        loop: true
+    const particleContainer = document.querySelector('.particles');
+    if (!particleContainer) return;
+
+    const numParticles = 100;
+    const particles = [];
+
+    // Create particles
+    for (let i = 0; i < numParticles; i++) {
+        const particle = document.createElement('div');
+        particle.classList.add('particle');
+        particle.style.left = `${Math.random() * 100}%`;
+        particle.style.top = `${Math.random() * 100}%`;
+        particleContainer.appendChild(particle);
+        particles.push(particle);
+    }
+
+    const mouse = { x: null, y: null };
+
+    // Track mouse movement
+    window.addEventListener('mousemove', (event) => {
+        mouse.x = event.clientX;
+        mouse.y = event.clientY;
     });
 
     // Animate particles
     anime({
-        targets: '.particle',
-        translateX: function() {
-            return anime.random(-100, 100) + 'vw';
+        targets: particles,
+        translateX: (p, i) => {
+            const initialX = p.getBoundingClientRect().left;
+            const mouseFactor = mouse.x ? (initialX - mouse.x) * 0.1 : 0;
+            return anime.random(-100, 100) + mouseFactor;
         },
-        translateY: function() {
-            return anime.random(-100, 100) + 'vh';
+        translateY: (p, i) => {
+            const initialY = p.getBoundingClientRect().top;
+            const mouseFactor = mouse.y ? (initialY - mouse.y) * 0.1 : 0;
+            return anime.random(-100, 100) + mouseFactor;
         },
         scale: [
-            {value: 0.1, duration: 0},
-            {value: 1, duration: 1000},
-            {value: 0.1, duration: 1000}
+            { value: () => anime.random(0.5, 1.5), duration: () => anime.random(500, 1500) },
+            { value: 0, duration: () => anime.random(500, 1500) }
         ],
         opacity: [
-            {value: 0, duration: 0},
-            {value: 1, duration: 1000},
-            {value: 0, duration: 1000}
+            { value: () => anime.random(0.2, 0.7), duration: () => anime.random(500, 1500) },
+            { value: 0, duration: () => anime.random(500, 1500) }
         ],
-        delay: anime.stagger(100),
-        duration: 2000,
+        duration: () => anime.random(2000, 4000),
+        delay: anime.stagger(15),
         loop: true,
-        easing: 'linear'
+        easing: 'easeOutExpo',
+        direction: 'alternate',
+        update: function(anim) {
+            // On each frame, re-calculate the translation based on the current mouse position
+            anim.animations.forEach(animation => {
+                if (animation.property === 'translateX') {
+                    const initialX = animation.target.getBoundingClientRect().left;
+                    const mouseFactor = mouse.x ? (initialX - mouse.x) * 0.1 : 0;
+                    animation.tweens[0].to.numbers[0] = anime.random(-100, 100) + mouseFactor;
+                }
+                if (animation.property === 'translateY') {
+                    const initialY = animation.target.getBoundingClientRect().top;
+                    const mouseFactor = mouse.y ? (initialY - mouse.y) * 0.1 : 0;
+                    animation.tweens[0].to.numbers[0] = anime.random(-100, 100) + mouseFactor;
+                }
+            });
+        }
     });
 
+    // Animate shapes (existing animation)
+    anime({
+        targets: '.shape',
+        translateX: () => anime.random(-50, 50) + 'vw',
+        translateY: () => anime.random(-50, 50) + 'vh',
+        rotate: () => anime.random(-180, 180),
+        scale: () => anime.random(0.2, 1.2),
+        opacity: () => anime.random(0.1, 0.3),
+        duration: () => anime.random(2000, 4000),
+        easing: 'easeInOutSine',
+        direction: 'alternate',
+        loop: true
+    });
 });
