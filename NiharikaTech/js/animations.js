@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const particleContainer = document.querySelector('.particles');
     if (!particleContainer) return;
 
-    const numParticles = 100;
+    const numParticles = 150; // Increased particle count for a fuller effect
     const particles = [];
 
     // Create particles
@@ -18,55 +18,26 @@ document.addEventListener('DOMContentLoaded', function() {
         particles.push(particle);
     }
 
-    const mouse = { x: null, y: null };
-
-    // Track mouse movement
-    window.addEventListener('mousemove', (event) => {
-        mouse.x = event.clientX;
-        mouse.y = event.clientY;
-    });
-
     // Animate particles
     anime({
         targets: particles,
-        translateX: (p, i) => {
-            const initialX = p.getBoundingClientRect().left;
-            const mouseFactor = mouse.x ? (initialX - mouse.x) * 0.1 : 0;
-            return anime.random(-100, 100) + mouseFactor;
-        },
-        translateY: (p, i) => {
-            const initialY = p.getBoundingClientRect().top;
-            const mouseFactor = mouse.y ? (initialY - mouse.y) * 0.1 : 0;
-            return anime.random(-100, 100) + mouseFactor;
-        },
+        translateX: () => anime.random(-50, 50),
+        translateY: () => anime.random(-50, 50),
         scale: [
-            { value: () => anime.random(0.5, 1.5), duration: () => anime.random(500, 1500) },
-            { value: 0, duration: () => anime.random(500, 1500) }
+            { value: () => anime.random(0.1, 0.5), duration: 0 },
+            { value: () => anime.random(0.5, 1.2), duration: () => anime.random(1000, 3000) },
+            { value: 0, duration: () => anime.random(1000, 3000) }
         ],
         opacity: [
-            { value: () => anime.random(0.2, 0.7), duration: () => anime.random(500, 1500) },
-            { value: 0, duration: () => anime.random(500, 1500) }
+            { value: 0, duration: 0 },
+            { value: () => anime.random(0.2, 0.8), duration: () => anime.random(1000, 2000) },
+            { value: 0, duration: () => anime.random(1000, 2000) }
         ],
-        duration: () => anime.random(2000, 4000),
-        delay: anime.stagger(15),
+        duration: () => anime.random(4000, 8000),
+        delay: anime.stagger(20),
         loop: true,
-        easing: 'easeOutExpo',
-        direction: 'alternate',
-        update: function(anim) {
-            // On each frame, re-calculate the translation based on the current mouse position
-            anim.animations.forEach(animation => {
-                if (animation.property === 'translateX') {
-                    const initialX = animation.target.getBoundingClientRect().left;
-                    const mouseFactor = mouse.x ? (initialX - mouse.x) * 0.1 : 0;
-                    animation.tweens[0].to.numbers[0] = anime.random(-100, 100) + mouseFactor;
-                }
-                if (animation.property === 'translateY') {
-                    const initialY = animation.target.getBoundingClientRect().top;
-                    const mouseFactor = mouse.y ? (initialY - mouse.y) * 0.1 : 0;
-                    animation.tweens[0].to.numbers[0] = anime.random(-100, 100) + mouseFactor;
-                }
-            });
-        }
+        easing: 'linear',
+        direction: 'alternate'
     });
 
     // Animate shapes (existing animation)
